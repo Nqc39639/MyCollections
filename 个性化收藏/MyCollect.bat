@@ -1,20 +1,20 @@
 @echo off
-echo [31mã€ç‰ˆæƒé™åˆ¶ï¼Œè¯·åœ¨NQC(QQ 2078715462)åŒæ„åä½¿ç”¨ï¼ï¼ï¼ã€‘[0m
-echo     [31m(æ³¨ï¼šæœ¬ç¨‹åºä¼šä¿®æ”¹ç³»ç»Ÿæ–‡ä»¶ï¼Œè¯·è°¨æ…ä½¿ç”¨ï¼ï¼ï¼)[0m
+echo [31m¡¾°æÈ¨ÏŞÖÆ£¬ÇëÔÚNQC(QQ 2078715462)Í¬ÒâºóÊ¹ÓÃ£¡£¡£¡¡¿[0m
+echo     [31m(×¢£º±¾³ÌĞò»áĞŞ¸ÄÏµÍ³ÎÄ¼ş£¬Çë½÷É÷Ê¹ÓÃ£¡£¡£¡)[0m
 
 :menu
 echo ===================================================
-echo è¯·é€‰æ‹©è¦æ‰§è¡Œçš„æ“ä½œï¼š
-echo --------0. é€€å‡ºç¨‹åº--------
-echo --------1. å…¨éƒ¨æ‰§è¡Œ--------
-echo --------2. â˜…é‡å¯èµ„æºç®¡ç†å™¨â˜…--------
-echo --------3. â˜…å³é”®èœå•â˜…--------
-echo --------4. â˜…ä»»åŠ¡æ æ˜¾ç¤ºç§’â˜…--------
-echo --------5. â˜…æœ¬åœ°ç»„ç­–ç•¥â˜…--------
-echo --------6. â˜…Officeç›—ç‰ˆæç¤ºâ˜…--------
-echo --------7. â˜…è®¾ç½®ä¸­çš„â€œä¸»é¡µâ€â˜…--------
-echo --------8. â˜…ä¿®æ”¹ç³»ç»Ÿå­—ä½“â˜…--------
-choice /C 012345678 /M "è¯·è¾“å…¥é€‰æ‹©çš„è®¾ç½®é¡¹:" /N
+echo ÇëÑ¡ÔñÒªÖ´ĞĞµÄ²Ù×÷£º
+echo --------0. ÍË³ö³ÌĞò--------
+echo --------1. È«²¿Ö´ĞĞ--------
+echo --------2. ¡ïÖØÆô×ÊÔ´¹ÜÀíÆ÷¡ï--------
+echo --------3. ¡ïÓÒ¼ü²Ëµ¥¡ï--------
+echo --------4. ¡ïÈÎÎñÀ¸ÏÔÊ¾Ãë¡ï--------
+echo --------5. ¡ï±¾µØ×é²ßÂÔ¡ï--------
+echo --------6. ¡ïOfficeµÁ°æÌáÊ¾¡ï--------
+echo --------7. ¡ïÉèÖÃÖĞµÄ¡°Ö÷Ò³¡±¡ï--------
+echo --------8. ¡ïĞŞ¸ÄÏµÍ³×ÖÌå¡ï--------
+choice /C 012345678 /M "ÇëÊäÈëÑ¡ÔñµÄÉèÖÃÏî:" /N
 if %errorlevel%==1 exit
 if %errorlevel%==2 call :execAll
 if %errorlevel%==3 call :execToggleRestart
@@ -26,7 +26,7 @@ if %errorlevel%==8 call :execToggleHome
 if %errorlevel%==9 call :execFont
 
 :success
-echo å·²æˆåŠŸæ‰§è¡Œï¼ï¼ï¼
+echo ÒÑ³É¹¦Ö´ĞĞ£¡£¡£¡
 goto menu
 
 :execAll
@@ -40,12 +40,12 @@ REM call :execFont
 goto success
 
 :execToggleRestart
-choice /C YNC /M "å¼€å¯/å…³é—­/å–æ¶ˆ[Y/N/C]:" /N
+choice /C YNC /M "¿ªÆô/¹Ø±Õ/È¡Ïû[Y/N/C]:" /N
 if %errorlevel%==1 (
     C:
     cd C:\Windows
     echo taskkill /f /im explorer.exe ^& start explorer.exe > restart.bat
-    reg add "HKCR\Directory\Background\shell\restart" /f /ve /d "é‡å¯èµ„æºç®¡ç†å™¨" > nul
+    reg add "HKCR\Directory\Background\shell\restart" /f /ve /d "ÖØÆô×ÊÔ´¹ÜÀíÆ÷" > nul
     reg add "HKCR\Directory\Background\shell\restart\command" /f /ve /d "C:\Windows\restart.bat" > nul
     goto success
 )
@@ -59,7 +59,7 @@ if %errorlevel%==2 (
 goto menu
 
 :execToggleContextMenu
-choice /C 01C /M "Win11â†’Win10/Win10â†’Win11/å–æ¶ˆ[0/1/C]:" /N
+choice /C 01C /M "Win11¡úWin10/Win10¡úWin11/È¡Ïû[0/1/C]:" /N
 if %errorlevel%==1 (
     reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve > nul
     goto success
@@ -71,7 +71,7 @@ if %errorlevel%==2 (
 goto menu
 
 :execToggleShowSeconds
-choice /C YNC /M "å¼€å¯/å…³é—­/å–æ¶ˆ[Y/N/C]:" /N
+choice /C YNC /M "¿ªÆô/¹Ø±Õ/È¡Ïû[Y/N/C]:" /N
 if %errorlevel%==1 (
     reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 1 /f > nul
     goto success
@@ -91,7 +91,7 @@ del /f /q List.txt
 goto success
 
 :execToggleOfficeTips
-choice /C YNC /M "å¼€å¯/å…³é—­/å–æ¶ˆ[Y/N/C]:" /N
+choice /C YNC /M "¿ªÆô/¹Ø±Õ/È¡Ïû[Y/N/C]:" /N
 if %errorlevel%==1 (
     reg delete "HKLM\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\UpdateUrl" /f > nul
     reg delete "HKLM\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\UpdateToVersion" /f > nul
@@ -107,7 +107,7 @@ if %errorlevel%==2 (
 goto menu
 
 :execToggleHome
-choice /C YNC /M "å¼€å¯/å…³é—­/å–æ¶ˆ[Y/N/C]:" /N
+choice /C YNC /M "¿ªÆô/¹Ø±Õ/È¡Ïû[Y/N/C]:" /N
 if %errorlevel%==1 (
     reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v SettingsPageVisibility /t REG_SZ /d "hide:home" /f > nul
     goto success
@@ -122,5 +122,5 @@ goto menu
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" /v "Microsoft YaHei & Microsoft YaHei UI (TrueType)" /t REG_SZ /d "simkai.ttf" /f > nul
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" /v "Microsoft YaHei Bold & Microsoft YaHei UI Bold (TrueType)" /t REG_SZ /d "simkai.ttf" /f > nul
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" /v "Microsoft YaHei Light & Microsoft YaHei UI Light (TrueType)" /t REG_SZ /d "simkai.ttf" /f > nul
-REM é»˜è®¤å€¼ä¾æ¬¡ä¸º msyh.ttc, msyhbd.ttc, msyhl.ttc
+REM Ä¬ÈÏÖµÒÀ´ÎÎª msyh.ttc, msyhbd.ttc, msyhl.ttc
 goto success
